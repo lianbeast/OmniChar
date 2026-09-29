@@ -375,8 +375,8 @@ if [[ "$RUN_INSTALL" -eq 1 ]]; then
   # one goes before the new one lands: two distributions owning one import path report versions
   # that disagree with each other.
   uv pip uninstall --python "$TARGET_PY" openchar-core inline-core >/dev/null 2>&1 || true
-  echo "+ uv pip install --python $TARGET_PY ${TORCH_INDEX[*]} -e .[$EXTRAS]"
-  uv pip install --python "$TARGET_PY" "${TORCH_INDEX[@]}" -e ".[$EXTRAS]"
+  echo "+ uv pip install --python $TARGET_PY ${TORCH_INDEX[*]:-} -e .[$EXTRAS]"
+  uv pip install --python "$TARGET_PY" ${TORCH_INDEX[@]+"${TORCH_INDEX[@]}"} -e ".[$EXTRAS]"
   # Torch LAST and through --index-url (exclusive): [tool.uv.sources] pins it to cu126 on win32,
   # and --extra-index-url picks the highest version ACROSS indexes, so PyPI's CPU wheel can win.
   if [[ "$TORCH_FORCE" -eq 1 && -n "$TORCH_CHOICE" ]]; then
@@ -397,8 +397,8 @@ if [[ "$RUN_INSTALL" -eq 1 ]]; then
   fi
   # The torch step saw only the torch index and can downgrade deps others need (typing-extensions).
   if [[ "$RESOLVE_AGAIN" -eq 1 ]]; then
-    echo "+ uv pip install --python $TARGET_PY ${TORCH_INDEX[*]} -e .[$EXTRAS] ${TF_PIN[*]}"
-    uv pip install --python "$TARGET_PY" "${TORCH_INDEX[@]}" -e ".[$EXTRAS]" "${TF_PIN[@]}"
+    echo "+ uv pip install --python $TARGET_PY ${TORCH_INDEX[*]:-} -e .[$EXTRAS] ${TF_PIN[*]:-}"
+    uv pip install --python "$TARGET_PY" ${TORCH_INDEX[@]+"${TORCH_INDEX[@]}"} -e ".[$EXTRAS]" ${TF_PIN[@]+"${TF_PIN[@]}"}
   fi
   if [[ ${#TF_PIN[@]} -gt 0 ]]; then
     echo "+ uv pip uninstall --python $TARGET_PY torchao"
