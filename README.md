@@ -202,6 +202,17 @@ Vite HMR on `:5173`.
 
 </details>
 
+## ComfyUI custom node
+
+A `.char` is not tied to this app. The
+[ComfyUI custom node](https://github.com/omnichar/ComfyUI-Omnichar) reads the same file, so a
+character built here applies on a ComfyUI graph, and one built there opens in the Characters
+panel.
+
+Workflows: [build a `.char`](https://github.com/omnichar/ComfyUI-Omnichar/blob/main/workflows/character_encode.json),
+[FLUX.2 Klein 9B](https://github.com/omnichar/ComfyUI-Omnichar/blob/main/workflows/flux_klein_9b_image_char.json),
+[MiniMax H3](https://github.com/omnichar/ComfyUI-Omnichar/blob/main/workflows/minimax_h3_char_video.json).
+
 ## Characters
 
 Getting the same person across shots normally means training a LoRA for each one, or re-wiring the
