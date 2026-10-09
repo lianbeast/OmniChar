@@ -4,7 +4,14 @@
 
 **Open-source studio for AI characters. One portable .char, working across every model.**
 
-A free, open-source app for AI generation where your characters stay the same. Build a character once and keep the same face across shots and models, generate locally on your own GPU or with hosted models, train your own LoRAs, and keep every render as a versioned take.
+Build a character once and keep the same face, body, clothes and voice across shots and models.
+Generate locally on your own GPU, in ComfyUI, or with hosted models.
+
+[**Try it in your browser**](https://cloud.omnichar.org) ·
+[**Install locally**](#install) ·
+[**ComfyUI node**](https://github.com/omnichar/ComfyUI-Omnichar) ·
+[**Getting started**](https://omnichar.org/getting-started) ·
+[**Workflows**](https://omnichar.org/workflows)
 
 [![Website][website-shield]][website-url]
 [![License: GPLv3][license-shield]][license-url]
@@ -30,10 +37,6 @@ A free, open-source app for AI generation where your characters stay the same. B
 [discord-url]: https://discord.gg/cSUS88VdY9
 [reddit-shield]: https://img.shields.io/badge/Reddit-r%2Fomnichar-FF4500?logo=reddit&logoColor=white&style=flat
 [reddit-url]: https://www.reddit.com/r/omnichar/
-
-[**New here? Start with the getting started guide →**](https://omnichar.org/getting-started)
-
-[**Explore workflows →**](https://omnichar.org/workflows)
 
 ## Supported models
 
